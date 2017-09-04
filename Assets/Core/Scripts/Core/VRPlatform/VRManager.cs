@@ -11,7 +11,7 @@ namespace Framework
         Editor = 5,
     }
 
-    public class VRManager : VRSingleton<VRManager>
+    public class VRManager : Singleton<VRManager>
     {
         public static IVRController Controller { get; internal set; }
         public static IVRViewer Viewer { get; internal set; }

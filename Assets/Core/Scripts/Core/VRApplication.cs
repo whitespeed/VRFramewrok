@@ -25,6 +25,11 @@ namespace Framework
             GotoFirstScene();
         }
 
+        public static void Quit()
+        {
+            Destroysingleton();
+        }
+
         public static void BackToLauncher()
         {
             Debug.LogWarning("[VRApplication] BackToLauncher");
@@ -37,9 +42,9 @@ namespace Framework
             VRManager.Viewer.ForceQuit();
         }
 
-        public static void CreateSingleton()
+        protected static void CreateSingleton()
         {
-            VRDebug.Create();
+            DebugManager.Create();
             VRManager.Create();
             SceneManager.Create();
             PluginManager.Create();
@@ -50,13 +55,13 @@ namespace Framework
             NetworkManager.Create();
             if(IsDebug)
             {
-                VRLogUI.Create();
+                LogUI.Create();
             }
         }
 
-        public static void Destroysingleton()
+        protected static void Destroysingleton()
         {
-            VRDebug.Destroy();
+            DebugManager.Destroy();
             SceneManager.Destroy();
             PluginManager.Destroy();
             VRManager.Destroy();
@@ -67,7 +72,7 @@ namespace Framework
             NetworkManager.Destroy();
             if(IsDebug)
             {
-                VRLogUI.Destroy();
+                LogUI.Destroy();
             }
         }
 
@@ -77,10 +82,6 @@ namespace Framework
             if(ChangeFirstScene != null)
             {
                 ChangeFirstScene();
-            }
-            else
-            {
-                
             }
         }
 

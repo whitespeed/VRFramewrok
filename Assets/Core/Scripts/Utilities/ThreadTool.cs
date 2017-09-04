@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Framework
 {
-    public class ThreadTool : VRSingleton<ThreadTool>
+    public class ThreadTool : Singleton<ThreadTool>
     {
         public const int maxThreads = 8;
 

@@ -2,7 +2,7 @@
 
 namespace Framework
 {
-    public abstract class VRSingleton<T> : MonoBehaviour where T : VRSingleton<T>
+    public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
         private static readonly string PREFIX = @"[Singleton] " + typeof(T);
         private static T _instance;

@@ -23,7 +23,7 @@ namespace Framework
             Debug.LogErrorFormat("[{0}] {1}", tag.GetType(), msg);
         }
     }
-    public class VRDebug : VRSingleton<VRDebug>
+    public class DebugManager : Singleton<DebugManager>
     {
         public static readonly string[] DisableTags = new string[]
         {
@@ -37,8 +37,8 @@ namespace Framework
         };
         public static bool HasDebugFile()
         {
-            var streamAssetPath = Path.Combine(VRPath.StreamingAssetPath, "vr.debug");
-            var persistenPath = Path.Combine(VRPath.PersistDataPath, "vr.debug");
+            var streamAssetPath = Path.Combine(AppPath.StreamingAssetPath, "vr.debug");
+            var persistenPath = Path.Combine(AppPath.PersistDataPath, "vr.debug");
             return File.Exists(streamAssetPath) || File.Exists(persistenPath);
         }
         public override void OnInitialize()
@@ -78,9 +78,9 @@ namespace Framework
             public void LogFormat(LogType logType, Object context, string format, params object[] args)
             {
                 var prefix = string.Format(format, args);
-                for (int i = 0; i < VRDebug.DisableTags.Length; i++)
+                for (int i = 0; i < DebugManager.DisableTags.Length; i++)
                 {
-                    if (prefix.StartsWith(VRDebug.DisableTags[i]))
+                    if (prefix.StartsWith(DebugManager.DisableTags[i]))
                         return;
                 }
                 defaultLogHandler.LogFormat(logType,context,format,args);

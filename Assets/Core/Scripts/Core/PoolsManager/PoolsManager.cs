@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Framework
 {
-    public class PoolsManager : VRSingleton<PoolsManager>
+    public class PoolsManager : Singleton<PoolsManager>
     {
 
         public const string GlobalPoolName = "Global";

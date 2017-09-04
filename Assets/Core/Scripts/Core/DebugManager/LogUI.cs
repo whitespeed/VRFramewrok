@@ -44,7 +44,7 @@ namespace Framework
             return child;
         }
     }
-    public class VRLogUI : VRSingleton<VRLogUI>
+    public class LogUI : Singleton<LogUI>
     {
         protected Queue<string> cacheToShow = new Queue<string>();
         protected LogType filterLogType = LogType.Error;

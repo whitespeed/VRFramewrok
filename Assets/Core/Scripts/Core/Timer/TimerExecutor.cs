@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Framework
 {
-    public class TimerExecutor : VRSingleton<TimerExecutor>
+    public class TimerExecutor : Singleton<TimerExecutor>
     {
         public static Func<long> TimeProducer = GetNowLocalUnixTime;
 

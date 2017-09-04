@@ -9,7 +9,7 @@ using System.ComponentModel;
 namespace Framework
 {
     
-    public class VRSetting
+    public class AppSetting
     {
         public struct PrefKey<T>
         {
@@ -29,7 +29,7 @@ namespace Framework
             } 
         }
 
-        public static T GetSetting<T>(VRSetting.PrefKey<T> key)
+        public static T GetSetting<T>(AppSetting.PrefKey<T> key)
         {
 
             if (PlayerPrefs.HasKey(key.path))
@@ -51,7 +51,7 @@ namespace Framework
                 return key.defaultValue;
             }
         }
-        public static void SetSetting<T>(VRSetting.PrefKey<T> key, T value)
+        public static void SetSetting<T>(AppSetting.PrefKey<T> key, T value)
         {
             var content = typeof(T).IsValueType ? value.ToString() : JsonMapper.ToJson(value);
             PlayerPrefs.SetString(key.path, content);

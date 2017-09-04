@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Framework
 {
-    public class HttpRequester : VRSingleton<HttpRequester>
+    public class HttpRequester : Singleton<HttpRequester>
     {
         public override void OnInitialize()
         {

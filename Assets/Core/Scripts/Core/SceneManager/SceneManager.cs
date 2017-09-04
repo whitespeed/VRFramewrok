@@ -6,7 +6,7 @@ using UnitySceneMgr = UnityEngine.SceneManagement.SceneManager;
 
 namespace Framework
 {
-    public class SceneManager : VRSingleton<SceneManager>
+    public class SceneManager : Singleton<SceneManager>
     {
         public const string Event_OnLoaded = "on_loaded";
         public const string Event_OnUnload = "on_unload";

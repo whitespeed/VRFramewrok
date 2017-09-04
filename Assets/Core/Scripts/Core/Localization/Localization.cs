@@ -108,10 +108,10 @@ namespace Framework
 
         public static string PlayerPref
         {
-            get { return VRSetting.GetSetting(VRPref.Language); }
+            get { return AppSetting.GetSetting(VRPref.Language); }
             set
             {
-                VRSetting.SetSetting(VRPref.Language,value);
+                AppSetting.SetSetting(VRPref.Language,value);
             }
         }
         /// <summary>
@@ -270,7 +270,7 @@ namespace Framework
 
                 if (!localizationHasBeenSet)
                 {
-                    mLanguage = VRSetting.GetSetting(VRPref.Language);
+                    mLanguage = AppSetting.GetSetting(VRPref.Language);
                     localizationHasBeenSet = true;
                 }
 

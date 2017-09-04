@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Framework
 {
 
-    public class PluginManager : VRSingleton<PluginManager>
+    public class PluginManager : Singleton<PluginManager>
     {
         public class Msg
         {

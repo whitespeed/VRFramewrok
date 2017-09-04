@@ -2,7 +2,7 @@
 
 namespace Framework
 {
-    public class NetworkManager : VRSingleton<NetworkManager>
+    public class NetworkManager : Singleton<NetworkManager>
     {
         public const string EVENT_STATUS_CHANGED = "on_status_changed";
         public readonly MsgDispather<NetworkReachability> Events = new MsgDispather<NetworkReachability>("NetworkManager");

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace Framework
 {
     //Texture 管理
-    public class TextureManager : VRSingleton<TextureManager>
+    public class TextureManager : Singleton<TextureManager>
     {
         protected TextureFileCache fileCache;
         protected TextureMemoryCache memoryCache;

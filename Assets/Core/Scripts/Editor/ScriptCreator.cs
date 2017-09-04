@@ -10,7 +10,7 @@ namespace Framework
 {
     public class ScriptCreator
     {
-        [MenuItem("Assets/Create/SoccerVR Script", false, 80)]
+        [MenuItem("Assets/Create/Custom Script", false, 80)]
         public static void CreatNewMono()
         {
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,

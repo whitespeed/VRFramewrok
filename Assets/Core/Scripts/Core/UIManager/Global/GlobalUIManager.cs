@@ -14,7 +14,7 @@ namespace Framework
         Error,
         NoNetwrok,
     }
-    public class GlobalUIManager : VRSingleton<GlobalUIManager>
+    public class GlobalUIManager : Singleton<GlobalUIManager>
     {
         protected Canvas root;
         protected GlobalMask mask;

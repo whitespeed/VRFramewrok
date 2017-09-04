@@ -6,29 +6,7 @@ using Framework;
 using System.Collections.Generic;
 namespace Framework
 {
-    public static class VRPath
-    {
-        static readonly string EditorPersistentPath = Application.dataPath +@"/../";
-        public static string PersistDataPath
-        {
-            get
-            {
-#if UNITY_EDITOR
-                return EditorPersistentPath;
-#else
-                return Application.persistentDataPath; 
-#endif
-            }
-        }
 
-        public static string StreamingAssetPath
-        {
-            get
-            {
-                return Application.streamingAssetsPath; 
-            }
-        }
-    }
 
     public static class VRScene
     {
@@ -46,8 +24,8 @@ namespace Framework
 
     public static class VRPref
     {
-        public static VRSetting.PrefKey<string> Language = new VRSetting.PrefKey<string>("Language","Chinese"); 
-        public static VRSetting.PrefKey<bool> FirstOpen = new VRSetting.PrefKey<bool>("FirstOpen", true);
+        public static AppSetting.PrefKey<string> Language = new AppSetting.PrefKey<string>("Language","Chinese"); 
+        public static AppSetting.PrefKey<bool> FirstOpen = new AppSetting.PrefKey<bool>("FirstOpen", true);
     }
 
     public static class VRSortingLayer
@@ -60,18 +38,5 @@ namespace Framework
     public static class VRLayer
     {
         public const string ColorBlock = "ColorBlock";
-    }
-
-    public static class VRHttp
-    {
-        public static string BaseUrl {
-            get
-            {
-                if (VRApplication.IsDebug)
-                    return "https://vrtest-api.aginomoto.com/sport/";
-                else
-                    return "https://vr-api.aginomoto.com/sport/";
-            }
-        }
     }
 }
